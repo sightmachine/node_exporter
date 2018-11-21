@@ -6,8 +6,16 @@
 
 * [BUGFIX]
 * [CHANGE] Add TCPSynRetrans to netstat default filter #1143
+* [CHANGE] Add a limit to the number of in-flight requests #1166
 * [ENHANCEMENT] Add Infiniband counters #1120
 * [FEATURE] Add a flag to disable exporter metrics #1148
+
+## 0.17.0-rc.1 / 2018-11-26
+
+* [BUGFIX] collector/diskstats: don't fail if there are extra stats #1125
+* [BUGFIX] collector/hwmon\_linux: handle temperature sensor file #1123
+* [BUGFIX] collector/filesystem: add bounds check #1133
+* [BUGFIX] Fix dragonfly's CPU counting frequency #1140
 
 ## 0.17.0-rc.0 / 2018-10-19
 
@@ -15,7 +23,7 @@ Build note: Linux builds can now be built without CGO.
 
 ### **Breaking changes**
 
-supvervisord collector reports "start_time_seconds" rather than "uptime" #952
+supvervisord collector reports `start_time_seconds` rather than `uptime` #952
 
 The wifi collector is disabled by default due to suspected caching issues and goroutine leaks.
 * https://github.com/prometheus/node_exporter/issues/870
