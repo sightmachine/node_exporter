@@ -1,9 +1,6 @@
 #!/bin/sh
 
 if [ -d /host/var/lib/kubelet/plugins/kubernetes.io ]; then
-  # Exit if anything doesn't go right
-  set -e
-  set -o pipefail
   # This will only traverse the known sub-directory path of <provider>/mount/<name>
   EXPECTED_MOUNTS=$(find /host/var/lib/kubelet/plugins/kubernetes.io/ -mindepth 3 -maxdepth 3 -type d | wc -l)
   # The actual mounts in the container, which ends up being divergent from the host /proc/mounts... Yay.
